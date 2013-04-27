@@ -1,6 +1,4 @@
-# glsl-example
-
-셰이더 프로그래밍 입문 for GLSL
+# 셰이더 프로그래밍 입문 for GLSL
 
 [셰이더 프로그래밍 입문](http://www.hanb.co.kr/book/look.html?isbn=978-89-7914-949-4)을 참고해서 예제를 GLSL로 구현한 소스입니다. Shadow Mapping의 경우는 [ShadowMapping with GLSL][fabiensanglard]를 참고해서 구현했습니다.
 
