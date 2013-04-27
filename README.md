@@ -9,6 +9,44 @@
 2. ```haruna_exe```를 실행 프로젝트로 설정
 2. haruna_exe -> Properties -> Debugging -> Working Directory : ```$(SolutionDir)..\assets```
 
+## Screen Shot / Video
+### GLSL Color Shader Example
+[Video](http://youtu.be/UXAQF222bhQ)
+
+### GLSL Texture2D Mapping
+[Video](http://youtu.be/FujIAOStZ54)
+
+### GLSL Lighting Example
+[Video](http://youtu.be/WYu2eOt7TSM)
+
+### GLSL Diffuse/Specular Mapping Example
+[Video](http://youtu.be/xZ3KtjtmWLw)
+
+### GLSL Toon Shader Example
+[Video](http://youtu.be/bLChCT_nzuU)
+
+### GLSL Normal Mapping Example
+[Video](http://youtu.be/kz0rjRE7AKU)
+
+### GLSL Environment Mapping Example
+[Video](http://youtu.be/kz0rjRE7AKU)
+
+### GLSL UV Animation Example
+[Video](http://youtu.be/9-J4WDu-BfU)
+
+### GLSL Shadow Mapping Example
+[Video](http://youtu.be/g1dlrTpxYIc)
+
+### GLSL Color Conversion Example
+Default / Gray / Sepia
+[Video](http://youtu.be/Bttrulb0KfQ)
+
+### GLSL Edge Detection Example
+Default / Edge Detection / Emboss 
+[Video](http://youtu.be/kpPKTpR0Z3A)
+
+
+
 ## Reference
 * [셰이더 프로그래밍 입문][pope_book]
 * [ShadowMapping with GLSL][fabiensanglard]
