@@ -7,7 +7,8 @@
 ## Build
 1. ```build/runCmake.exe```를 실행
 2. ```haruna_exe```를 실행 프로젝트로 설정
-2. haruna_exe -> Properties -> Debugging -> Working Directory : ```$(SolutionDir)..\assets```
+3. haruna_exe -> Properties -> Debugging -> Working Directory : ```$(SolutionDir)..\assets```
+4. Color Conversion, Edge Detection의 경우는 실행중에 1/2/3 을 눌러서 모드를 바꿀 수 있다.
 
 ## Screen Shot / Video
 ### GLSL Color Shader Example
@@ -42,6 +43,7 @@
 
 ### GLSL Environment Mapping Example
 [Video](http://youtu.be/kz0rjRE7AKU)
+
 ![ScreenShot](https://raw.github.com/if1live/glsl_example/master/screenshot/env_mapping.jpg)
 
 ### GLSL UV Animation Example
