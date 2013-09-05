@@ -14,7 +14,7 @@ SolidCubeFactory::SolidCubeFactory(float width, float height, float depth)
 	OVR_ASSERT(width > 0 && height > 0 && depth > 0);
 }
 
-std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidCubeFactory::CreateNormalMesh()
+std::vector<DrawCmdData<Vertex_1P1N1UV> > SolidCubeFactory::CreateNormalMesh()
 {
 	float width = width_/2;
 	float height = height_/2;
@@ -211,7 +211,7 @@ std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidCubeFactory::CreateNormalMesh()
 		index_list.push_back(baseIndex + 3);
 	}
 
-	std::vector<DrawCmdData<Vertex_1P1N1UV>> data_list;
+	std::vector<DrawCmdData<Vertex_1P1N1UV> > data_list;
 	data_list.push_back(cmd);
 	return data_list;
 }
@@ -222,7 +222,7 @@ SolidSphereFactory::SolidSphereFactory(float radius, int slices, int stacks)
 	
 }
 
-std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidSphereFactory::CreateNormalMesh()
+std::vector<DrawCmdData<Vertex_1P1N1UV> > SolidSphereFactory::CreateNormalMesh()
 {
 	bool normals = true;
 	float nsign = 1.0f;
@@ -300,7 +300,7 @@ std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidSphereFactory::CreateNormalMesh()
 
 		t -= dt;
 	}
-	std::vector<DrawCmdData<Vertex_1P1N1UV>> data_list;
+	std::vector<DrawCmdData<Vertex_1P1N1UV> > data_list;
 	data_list.push_back(cmd);
 	return data_list;
 }

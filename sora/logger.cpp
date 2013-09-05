@@ -1,6 +1,7 @@
 ﻿// Ŭnicode please
 #include "stdafx.h"
 #include <string>
+#include <algorithm>
 #include "sora/logger.h"
 
 namespace sora {;
@@ -47,7 +48,7 @@ AutoGenLoggerList::~AutoGenLoggerList()
 AutoGenLoggerList::LoggerType &AutoGenLoggerList::GetLogger(const char *name) 
 {
 	LoggerListType &logger_list = GetInstance().logger_list_;
-	auto found = find_if(logger_list.begin(), logger_list.end(), LoggerNameFinder(name));
+	auto found = std::find_if(logger_list.begin(), logger_list.end(), LoggerNameFinder(name));
 	if(found != logger_list.end()) {
 		return *found;
 	} else {

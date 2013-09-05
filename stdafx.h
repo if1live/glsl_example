@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
+#include <cstring>
 
 #include <sstream>
 #include <iostream>
@@ -16,6 +17,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <type_traits>
 
 
 #include <glm/glm.hpp>

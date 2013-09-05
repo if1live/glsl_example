@@ -5,6 +5,11 @@ LIST( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake" )
 INCLUDE( pch_support )
 INCLUDE( compiler_option )
 
+if(UNIX)
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11" )
+	SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -lX11 -lXxf86vm -lpthread -lXrandr -lXi" )
+endif()
+
 OPTION( AUTO_DOWNLOAD_EXT "When needed external library is not found, Automatically download it." OFF )
 OPTION( SUBMODULE_UPDATE "Try to update submodules" ON )
 

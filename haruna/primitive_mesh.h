@@ -36,7 +36,7 @@ public:
 	SolidMeshFactory() {}
 	virtual ~SolidMeshFactory() {}
 
-	virtual std::vector<DrawCmdData<Vertex_1P1N1UV>> CreateNormalMesh() = 0;
+	virtual std::vector< DrawCmdData<Vertex_1P1N1UV> > CreateNormalMesh() = 0;
 };
 
 class SolidCubeFactory : public SolidMeshFactory {
@@ -44,7 +44,7 @@ public:
 	SolidCubeFactory(float width, float height, float depth);
 	virtual ~SolidCubeFactory() {}
 
-	virtual std::vector<DrawCmdData<Vertex_1P1N1UV>> CreateNormalMesh();
+	virtual std::vector< DrawCmdData<Vertex_1P1N1UV> > CreateNormalMesh();
 
 private:
 	float width_;
@@ -57,7 +57,7 @@ public:
 	SolidSphereFactory(float radius, int slices, int stacks);
 	virtual ~SolidSphereFactory() {}
 
-	virtual std::vector<DrawCmdData<Vertex_1P1N1UV>> CreateNormalMesh();
+	virtual std::vector< DrawCmdData<Vertex_1P1N1UV> > CreateNormalMesh();
 
 private:
 	float radius_;
