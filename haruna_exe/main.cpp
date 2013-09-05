@@ -36,6 +36,9 @@ bool InitWindow(int width, int height)
         exit(EXIT_FAILURE);
     }
 
+    /* Make the window's context current */
+    glfwMakeContextCurrent(g_window);
+
 	GLenum err = glewInit();
 	if(GLEW_OK != err) {
 		/* Problem: glewInit failed, something is seriously wrong. */
@@ -47,8 +50,7 @@ bool InitWindow(int width, int height)
 
 	fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
 
-    /* Make the window's context current */
-    glfwMakeContextCurrent(g_window);
+    
 	return true;
 }
 
