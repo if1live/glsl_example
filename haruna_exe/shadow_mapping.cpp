@@ -5,7 +5,8 @@
 #include <glm/ext.hpp>
 
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
+#include "main.h"
 
 #include "sora/assert_inc.h"
 #include "sora/filesystem.h"
@@ -161,7 +162,7 @@ bool ShadowMapping::Update(float dt)
 	light_pos_[2] = light_mvnt * sin(elapsed_time);
 	elapsed_time += dt;
 
-	bool running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);
+	bool running = !glfwGetKey(g_window, GLFW_KEY_ESCAPE) && !glfwWindowShouldClose(g_window);
 	return running;
 }
 void ShadowMapping::Draw()

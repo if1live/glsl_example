@@ -5,7 +5,8 @@
 #include <glm/ext.hpp>
 
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
+#include "main.h"
 
 #include <vector>
 
@@ -233,21 +234,21 @@ bool EdgeDetection::InitEdgeDetection()
 
 bool EdgeDetection::Update(float dt)
 {
-	if(glfwGetKey('1') == GLFW_PRESS) {
+	if(glfwGetKey(g_window, '1') == GLFW_PRESS) {
 		effect_type_ = kEffectNo;
 		printf("Current : No Effect\n");
 	}
-	if(glfwGetKey('2') == GLFW_PRESS) {
+	if(glfwGetKey(g_window, '2') == GLFW_PRESS) {
 		effect_type_ = kEffectEdgeDetection;
 		printf("Current : Gray Edge Detection\n");
 	}
-	if(glfwGetKey('3') == GLFW_PRESS) {
+	if(glfwGetKey(g_window, '3') == GLFW_PRESS) {
 		effect_type_ = kEffectEmboss;
 		printf("Current : Emboss\n");
 	}
 
 	y_rot_ += 0.5f * dt;
-	bool running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);
+	bool running = !glfwGetKey(g_window, GLFW_KEY_ESCAPE) && !glfwWindowShouldClose(g_window);
 	return running;
 }
 void EdgeDetection::Draw()

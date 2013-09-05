@@ -5,7 +5,8 @@
 #include <glm/ext.hpp>
 
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
+#include "main.h"
 
 #include <vector>
 
@@ -70,7 +71,7 @@ bool Texture2DMapping::Init()
 bool Texture2DMapping::Update(float dt)
 {
 	y_rot_ += 4.0f * dt;
-	bool running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);
+	bool running = !glfwGetKey(g_window, GLFW_KEY_ESCAPE) && !glfwWindowShouldClose(g_window);
 	return running;
 }
 void Texture2DMapping::Draw()

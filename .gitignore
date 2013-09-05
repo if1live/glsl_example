@@ -12,4 +12,33 @@
 *.la
 *.a
 
-build/
+# cmake
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+# vim
+*.swp
+*.*~
+
+# visual studio
+*.sdf
+*.suo
+*.opensdf
+*.vcxproj.user
+*.vcxproj
+*.sln
+*.filters
+ipch
+
+# compiled result
+*.exe
+haruna/Debug/*
+haruna/Release/*
+Debug/*
+Release/*
+
+# unittest
+testdata/*.tmp

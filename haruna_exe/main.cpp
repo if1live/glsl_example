@@ -1,6 +1,6 @@
 ﻿// Ŭnicode please 
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 
 #include <iostream>
 #include <memory>
@@ -21,16 +21,20 @@
 const float kWidth = 640;
 const float kHeight = 480;
 
+GLFWwindow *g_window = nullptr;
+
 bool InitWindow(int width, int height) 
 {
 	if(!glfwInit()) {
 		exit(EXIT_FAILURE);
 	}
 
-	if(!glfwOpenWindow(width, height, 0, 0, 0, 0, 0, 0, GLFW_WINDOW)) {
-		glfwTerminate();
-		exit(EXIT_FAILURE);
-	}
+    /* Create a windowed mode window and its OpenGL context */
+    g_window = glfwCreateWindow(width, height, "GLSL Example", NULL, NULL);
+    if (!g_window) {
+        glfwTerminate();
+        exit(EXIT_FAILURE);
+    }
 
 	GLenum err = glewInit();
 	if(GLEW_OK != err) {
@@ -42,6 +46,9 @@ bool InitWindow(int width, int height)
 	}
 
 	fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
+
+    /* Make the window's context current */
+    glfwMakeContextCurrent(g_window);
 	return true;
 }
 
@@ -134,8 +141,11 @@ int main()
 		running = logic->Update(dt);
 		logic->Draw();
 
-		glfwSwapBuffers();
+		glfwSwapBuffers(g_window);
 		old_time = current_time;
+
+        /* Poll for and process events */
+        glfwPollEvents();
 	}
 
 	logic.reset(NULL);
