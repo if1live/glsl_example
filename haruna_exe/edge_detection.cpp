@@ -10,7 +10,7 @@
 
 #include <vector>
 
-#include "sora/assert_inc.h"
+#include "sora/OVR_Types.h"
 #include "sora/filesystem.h"
 #include "sora/low_level_c_file.h"
 #include "haruna/gl/shader.h"
@@ -132,11 +132,11 @@ bool EdgeDetection::Init()
 	// create mesh
 	//mesh_.reset(new haruna::Torus(1, 0.6));
 	//mesh_.reset(new haruna::TrefoilKnot(2));
-	mesh_.reset(new haruna::Sphere(1.8));
+	mesh_.reset(new haruna::Sphere(1.8f));
 
 	//fb
 	fb_.reset(new haruna::gl::FrameBuffer());
-	bool fb_init_result = fb_->Init(width(), height());
+	bool fb_init_result = fb_->Init((int)width(), (int)height());
 	if(fb_init_result == false) {
 		return false;
 	}

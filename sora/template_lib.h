@@ -1,7 +1,7 @@
 ﻿// Ŭnicode please
 #pragma once
 
-#include "assert_inc.h"
+#include "sora/OVR_Types.h"
 
 namespace sora {;
 /// @brief second에 포인터를 저장하는 연관 컨테이너가
@@ -50,7 +50,7 @@ void SafeDeleteArray(T* &ptr)
 template<typename T>
 void SafeDeleteWithNullCheck(T* &ptr) 
 {
-	SR_ASSERT(ptr != NULL && "null지우기는 언어상은 지원하나 아마도 잘못 짜여져있을 가능성이 있다");
+	OVR_ASSERT(ptr != NULL && "null지우기는 언어상은 지원하나 아마도 잘못 짜여져있을 가능성이 있다");
 	delete(ptr);
 	ptr = NULL;
 }
@@ -58,7 +58,7 @@ void SafeDeleteWithNullCheck(T* &ptr)
 template<typename T>
 void SafeDeleteArrayWithNullCheck(T* &ptr) 
 {
-	SR_ASSERT(ptr != NULL && "null지우기는 언어상은 지원하나 아마도 잘못 짜여져있을 가능성이 있다");
+	OVR_ASSERT(ptr != NULL && "null지우기는 언어상은 지원하나 아마도 잘못 짜여져있을 가능성이 있다");
 	delete[](ptr);
 	ptr = NULL;
 }
@@ -105,13 +105,13 @@ public:
 protected:
 	Singleton() 
 	{
-		SR_ASSERT(ctx_ == 0);
+		OVR_ASSERT(ctx_ == 0);
 		long offset = (long)(T*)(1) - (long)(Singleton*)(T*)(1);
 		ctx_ = (T*)((long)(this + offset));
 	}
 	~Singleton() 
 	{
-		SR_ASSERT(ctx_ != 0);
+		OVR_ASSERT(ctx_ != 0);
 		ctx_ = 0;
 	}
 	Singleton(const Singleton &o);
@@ -149,7 +149,7 @@ public:
 			SharedObject::ctx_ = static_cast<T*>(this);
 		} else {
 			//@TODO
-			//SR_ASSERT(!"shared obj cannot exist 2 obj");
+			//OVR_ASSERT(!"shared obj cannot exist 2 obj");
 		}
 	}
 	~SharedObject() 

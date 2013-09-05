@@ -10,7 +10,7 @@
 
 #include <vector>
 
-#include "sora/assert_inc.h"
+#include "sora/OVR_Types.h"
 #include "sora/filesystem.h"
 #include "sora/low_level_c_file.h"
 #include "haruna/gl/shader.h"

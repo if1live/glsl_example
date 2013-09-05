@@ -8,7 +8,7 @@ int Split(const std::string &str,
 		  char ch, std::vector<std::string> *retval) 
 {
 	using std::string;
-	//SR_ASSERT(retval->empty() == true);
+	//OVR_ASSERT(retval->empty() == true);
 
 	// if no delimeter
 	if (str.length() == 0) {

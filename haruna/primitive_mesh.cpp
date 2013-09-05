@@ -11,7 +11,7 @@ namespace haruna {;
 SolidCubeFactory::SolidCubeFactory(float width, float height, float depth)
 	: width_(width), height_(height), depth_(depth)
 {
-	SR_ASSERT(width > 0 && height > 0 && depth > 0);
+	OVR_ASSERT(width > 0 && height > 0 && depth > 0);
 }
 
 std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidCubeFactory::CreateNormalMesh()
@@ -308,7 +308,7 @@ std::vector<DrawCmdData<Vertex_1P1N1UV>> SolidSphereFactory::CreateNormalMesh()
 WireCubeDataFactory::WireCubeDataFactory(float width, float height, float depth)
 	: width_(width), height_(height), depth_(depth)
 {
-	SR_ASSERT(width > 0 && height > 0 && depth > 0);
+	OVR_ASSERT(width > 0 && height > 0 && depth > 0);
 	width = width/2;
 	height = height/2;
 	depth = depth/2;

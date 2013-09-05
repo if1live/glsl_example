@@ -1,6 +1,6 @@
 ﻿// Ŭnicode please
 #include "stdafx.h"
-#include "sora/assert_inc.h"
+#include "sora/OVR_Types.h"
 #include "buffer_object.h"
 
 using namespace std;
@@ -33,7 +33,7 @@ namespace gl {
 	}
 
 	bool IndexBufferObject::Load(const std::vector<unsigned short> &index_list) { 
-		SR_ASSERT(IsLoaded() == true);
+		OVR_ASSERT(IsLoaded() == true);
 		if(index_list.empty()) {
 			return false;
 		}
@@ -55,7 +55,7 @@ namespace gl {
 		if(handle_ != 0) {
 			return false;
 		}
-		SR_ASSERT(IsLoaded() == false);
+		OVR_ASSERT(IsLoaded() == false);
 		glGenBuffers(1, &handle_);
 		return Load(index_list);
 	}

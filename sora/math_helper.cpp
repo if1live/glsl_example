@@ -43,7 +43,7 @@ bool EqualRelError(float a, float b, float maxError)
 bool EqualUlps(float a, float b, int maxUlps) 
 {
 	//http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm
-	SR_ASSERT(sizeof(float) == sizeof(int));
+	OVR_ASSERT(sizeof(float) == sizeof(int));
 	if (a == b) {
 		return true;
 	}

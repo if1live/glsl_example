@@ -8,7 +8,7 @@
 #include <GLFW/glfw3.h>
 #include "main.h"
 
-#include "sora/assert_inc.h"
+#include "sora/OVR_Types.h"
 #include "sora/filesystem.h"
 #include "sora/low_level_c_file.h"
 #include "haruna/parametric_equations.h"
@@ -109,8 +109,8 @@ bool ShadowMapping::InitShadowFBO()
 {
 	//float shadow_map_w = width() * kShadowMapRatio;
 	//float shadow_map_h = height() * kShadowMapRatio;
-	float shadow_map_w = shadow_map_width_;
-	float shadow_map_h = shadow_map_height_;
+	int shadow_map_w = shadow_map_width_;
+	int shadow_map_h = shadow_map_height_;
 
 	// 0 : depth stencil
 	// shadow map 정보 생성에는 깊이만 잇어도 되니까 깊이만 fbo에 추가함
@@ -216,7 +216,7 @@ void ShadowMapping::Draw()
 		auto prog = shadow_map_prog_.get();
 		prog->Use();
 
-		glViewport(0, 0, width(), height());
+		glViewport(0, 0, (int)width(), (int)height());
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);

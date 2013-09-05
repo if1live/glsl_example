@@ -1,7 +1,7 @@
 ﻿// Ŭnicode please
 #pragma once
 
-#include "sora/arch.h"
+#include "sora/OVR_Types.h"
 #include <limits>
 #include <cstdlib>
 #include <cmath>

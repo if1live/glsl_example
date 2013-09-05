@@ -18,7 +18,7 @@ namespace gl {
 		case GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
 			error_msg = "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT";
 			break;
-#if SR_WIN && (SR_GLES == 0)
+#ifdef OVR_OS_WIN32
 		case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT:
 #else
 		case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
@@ -31,7 +31,7 @@ namespace gl {
 		case GL_FRAMEBUFFER_UNSUPPORTED:
 			error_msg = "GL_FRAMEBUFFER_UNSUPPORTED";
 			break;
-#if SR_WIN && (SR_GLES == 0)
+#ifdef OVR_OS_WIN32
 		case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER :
 			error_msg = "GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER";
 			break;
@@ -42,7 +42,7 @@ namespace gl {
 			break;  
 		}
 		LOGE("FrameBuffer Error [%s] : %s", name, error_msg);
-		//SR_ASSERT(false);
+		//OVR_ASSERT(false);
 
 		return false;
 	}

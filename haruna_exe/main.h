@@ -1,4 +1,4 @@
 // Ŭnicode please 
-class GLFWwindow;
+struct GLFWwindow;
 
 extern GLFWwindow *g_window;

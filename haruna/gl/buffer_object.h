@@ -1,7 +1,7 @@
 ﻿// Ŭnicode please
 #pragma once
 #include <GL/glew.h>
-#include "sora/assert_inc.h"
+#include "sora/OVR_Types.h"
 
 namespace haruna {;
 namespace gl {
@@ -49,7 +49,7 @@ namespace gl {
 		template<typename T2>
 		bool InitWithTypeCheck(const std::vector<T2> &vert_list) 
 		{
-			SR_ASSERT(IsLoaded() == false);
+			OVR_ASSERT(IsLoaded() == false);
 			if(vert_list.empty()) {
 				return false;
 			}
@@ -63,7 +63,7 @@ namespace gl {
 		template<typename T2>
 		bool LoadWithTypeCheck(const std::vector<T2> &vert_list) 
 		{
-			SR_ASSERT(IsLoaded() == true);
+			OVR_ASSERT(IsLoaded() == true);
 			if(vert_list.empty()) {
 				return false;
 			}
