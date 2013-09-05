@@ -7,6 +7,3 @@
 [submodule "ext/glfw"]
 	path = ext/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "ext/soil"]
-	path = ext/soil
-	url = https://github.com/if1live/soil.git
