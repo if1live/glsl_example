@@ -31,8 +31,8 @@ ToonShader::~ToonShader()
 bool ToonShader::Init()
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/toon.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/toon.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/toon.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/toon.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();

@@ -12,7 +12,6 @@ const int kMaxPathLength = 512;
 
 class Filesystem {
 public:
-	static int GetFileSize(int fd);
 	static int GetFileSize(FILE *file);
 	static std::string GetExtension(const char *filename) {
 		return GetExtension(std::string(filename));

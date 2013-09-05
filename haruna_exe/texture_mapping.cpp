@@ -32,8 +32,8 @@ Texture2DMapping::~Texture2DMapping()
 bool Texture2DMapping::Init()
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/simple_tex.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/simple_tex.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/simple_tex.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/simple_tex.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();
@@ -59,7 +59,7 @@ bool Texture2DMapping::Init()
 
 
 	//create texture
-	std::string tex_path = sora::Filesystem::GetAppPath("texture/glazed_brick_S.png");
+	std::string tex_path = sora::Filesystem::GetAppPath("assets/texture/glazed_brick_S.png");
 	tex_.reset(new haruna::gl::Texture2D(tex_path));
 	bool tex_init_result = tex_->Init();
 	if(!tex_init_result) {

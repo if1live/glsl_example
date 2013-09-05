@@ -30,8 +30,8 @@ Lighting::~Lighting()
 bool Lighting::Init()
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/basic_light.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/basic_light.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/basic_light.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/basic_light.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();

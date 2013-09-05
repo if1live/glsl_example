@@ -28,8 +28,8 @@ ColorShader::~ColorShader()
 bool ColorShader::Init() 
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/simple_red.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/simple_red.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/simple_red.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/simple_red.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();

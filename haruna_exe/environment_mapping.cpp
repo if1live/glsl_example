@@ -46,8 +46,8 @@ EnvironmentMapping::~EnvironmentMapping()
 bool EnvironmentMapping::Init()
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/environment_mapping.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/environment_mapping.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/environment_mapping.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/environment_mapping.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();
@@ -72,7 +72,7 @@ bool EnvironmentMapping::Init()
 	}
 
 	//create texture
-	std::string diffuse_map_path = sora::Filesystem::GetAppPath("texture/fieldstone_DM.png");
+	std::string diffuse_map_path = sora::Filesystem::GetAppPath("assets/texture/fieldstone_DM.png");
 	diffuse_map_.reset(new haruna::gl::Texture2D(diffuse_map_path));
 	bool diffuse_map_init_result = diffuse_map_->Init();
 	if(!diffuse_map_init_result) {
@@ -80,14 +80,14 @@ bool EnvironmentMapping::Init()
 	}
 
 	//create texture
-	std::string specular_map_path = sora::Filesystem::GetAppPath("texture/fieldstone_SM.png");
+	std::string specular_map_path = sora::Filesystem::GetAppPath("assets/texture/fieldstone_SM.png");
 	specular_map_.reset(new haruna::gl::Texture2D(specular_map_path));
 	bool specular_map_init_result = specular_map_->Init();
 	if(!specular_map_init_result) {
 		return false;
 	}
 
-	std::string normal_map_path = sora::Filesystem::GetAppPath("texture/fieldstone_NM.png");
+	std::string normal_map_path = sora::Filesystem::GetAppPath("assets/texture/fieldstone_NM.png");
 	normal_map_.reset(new haruna::gl::Texture2D(normal_map_path));
 	bool normal_map_init_result = normal_map_->Init();
 	if(!normal_map_init_result) {
@@ -96,12 +96,12 @@ bool EnvironmentMapping::Init()
 
 	//cube map
 	environment_map_.reset(new haruna::gl::TextureCube(
-		sora::Filesystem::GetAppPath("texture/cubemap_left.png"),
-		sora::Filesystem::GetAppPath("texture/cubemap_right.png"),
-		sora::Filesystem::GetAppPath("texture/cubemap_bottom.png"),
-		sora::Filesystem::GetAppPath("texture/cubemap_top.png"),
-		sora::Filesystem::GetAppPath("texture/cubemap_back.png"),
-		sora::Filesystem::GetAppPath("texture/cubemap_front.png")
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_left.png"),
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_right.png"),
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_bottom.png"),
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_top.png"),
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_back.png"),
+		sora::Filesystem::GetAppPath("assets/texture/cubemap_front.png")
 	));
 	bool env_map_init_result = environment_map_->Init();
 	if(!env_map_init_result) {

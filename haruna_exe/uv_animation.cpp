@@ -41,8 +41,8 @@ UVAnimation::~UVAnimation()
 bool UVAnimation::Init()
 {
 	//쉐이더 
-	std::string fs_path = sora::Filesystem::GetAppPath("shader/uv_animation.fs");
-	std::string vs_path = sora::Filesystem::GetAppPath("shader/uv_animation.vs");
+	std::string fs_path = sora::Filesystem::GetAppPath("assets/shader/uv_animation.fs");
+	std::string vs_path = sora::Filesystem::GetAppPath("assets/shader/uv_animation.vs");
 	sora::ReadonlyCFile fs_file = sora::ReadonlyCFile(fs_path);
 	sora::ReadonlyCFile vs_file = sora::ReadonlyCFile(vs_path);
 	bool fs_open_result = fs_file.Open();
@@ -67,7 +67,7 @@ bool UVAnimation::Init()
 	}
 
 	//create texture
-	std::string diffuse_map_path = sora::Filesystem::GetAppPath("texture/glazed_brick_D.png");
+	std::string diffuse_map_path = sora::Filesystem::GetAppPath("assets/texture/glazed_brick_D.png");
 	diffuse_map_.reset(new haruna::gl::Texture2D(diffuse_map_path));
 	bool diffuse_map_init_result = diffuse_map_->Init();
 	if(!diffuse_map_init_result) {
@@ -75,7 +75,7 @@ bool UVAnimation::Init()
 	}
 
 	//create texture
-	std::string specular_map_path = sora::Filesystem::GetAppPath("texture/glazed_brick_S.png");
+	std::string specular_map_path = sora::Filesystem::GetAppPath("assets/texture/glazed_brick_S.png");
 	specular_map_.reset(new haruna::gl::Texture2D(specular_map_path));
 	bool specular_map_init_result = specular_map_->Init();
 	if(!specular_map_init_result) {

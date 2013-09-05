@@ -83,12 +83,12 @@ bool ShadowMapping::InitShader(const std::string &vs_filename, const std::string
 }
 bool ShadowMapping::InitSimpleShader()
 {
-	//return InitShader("shader/create_shadow_map.vs", "shader/create_shadow_map.fs", create_shadow_map_prog_);
-	return InitShader("shader/simple_red.vs", "shader/simple_red.fs", simple_prog_);
+	//return InitShader("assets/shader/create_shadow_map.vs", "shader/create_shadow_map.fs", create_shadow_map_prog_);
+	return InitShader("assets/shader/simple_red.vs", "shader/simple_red.fs", simple_prog_);
 }
 bool ShadowMapping::InitShaderMapShader()
 {
-	return InitShader("shader/shadow_map.vs", "shader/shadow_map.fs", shadow_map_prog_);
+	return InitShader("assets/shader/shadow_map.vs", "shader/shadow_map.fs", shadow_map_prog_);
 }
 
 bool ShadowMapping::Init()
