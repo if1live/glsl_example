@@ -1,7 +1,7 @@
 ﻿// Ŭnicode please
 #pragma once
 
-#define PATH_SEPARATOR  '\\'
+#define PATH_SEPARATOR  '/'
 
 #include <cstdio>
 #include <string>
