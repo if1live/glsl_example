@@ -1,0 +1,12 @@
+[submodule "ext/glm"]
+	path = ext/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "ext/glew"]
+	path = ext/glew
+	url = https://github.com/omniavinco/glew-cmake.git
+[submodule "ext/glfw"]
+	path = ext/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "ext/soil"]
+	path = ext/soil
+	url = https://github.com/if1live/soil.git
