@@ -6,7 +6,7 @@ INCLUDE( pch_support )
 INCLUDE( compiler_option )
 
 if(UNIX)
-	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11" )
+	#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11" )
 	SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -lX11 -lXxf86vm -lpthread -lXrandr -lXi" )
 endif()
 
@@ -116,3 +116,7 @@ SOURCE_GROUP( "" FILES ${HARUNA_EXE_SRC_FILES} )
 TARGET_LINK_LIBRARIES( haruna_exe
 	${HARUNA_LINK_LIBS}
 	haruna )
+
+#########################################################
+
+USE_CPP11( TARGET haruna haruna_exe )
