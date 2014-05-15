@@ -9,7 +9,7 @@ varying float v_diffuse;
 void main() 
 {
 	vec3 rgb = vec3(v_diffuse, v_diffuse, v_diffuse);
-	rgb = clamp(rgb, 0.0, 1.0) * u_lightColor;
+	rgb = clamp(rgb, 0.0, 1.0) * u_lightColor.xyz;
 	
 	vec4 shadowCoord = v_shadowCoord / v_shadowCoord.w;
 	shadowCoord = shadowCoord * 0.5 + 0.5;

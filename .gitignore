@@ -39,6 +39,12 @@ haruna/Debug/*
 haruna/Release/*
 Debug/*
 Release/*
+Win32/*
+bin/*
+haruna_exe.dir/*
+haruna.dir/*
+lib/*
+
 
 # unittest
 testdata/*.tmp
